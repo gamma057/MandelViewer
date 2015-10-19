@@ -289,11 +289,13 @@ public class MandelViewer extends Application{
 		
 		stage.widthProperty().addListener((observableValue, oldSceneWidth, newSceneWidth) -> {
 			statusbar.setPrefWidth(newSceneWidth.doubleValue());
+			mandel.gc.clearRect(0.0, 0.0, oldSceneWidth.doubleValue(), mandel.getHeight());
 			mandel.setWidth((minimal? 1: 2)*newSceneWidth.doubleValue());
 			AnchorPane.setLeftAnchor(mandel, minimal? 0: -mandel.getWidth()/4);
 			mandel.draw();
 		});
 		stage.heightProperty().addListener((observableValue, oldSceneHeight, newSceneHeight) -> {
+			mandel.gc.clearRect(0.0, 0.0, mandel.getWidth(), oldSceneHeight.doubleValue());
 			mandel.setHeight((minimal? 1: 2)*newSceneHeight.doubleValue());
 			AnchorPane.setTopAnchor(mandel, minimal? 0: -mandel.getHeight()/4);
 			AnchorPane.setTopAnchor(statusbar, newSceneHeight.doubleValue()-statusbar.getHeight());
