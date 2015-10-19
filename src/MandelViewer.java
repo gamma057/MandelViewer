@@ -327,12 +327,8 @@ public class MandelViewer extends Application{
 		zoomslider.setOnMouseReleased(event -> zoomslider.setValue(0.));
 		zoomslider.setOnKeyPressed(event -> handlekey(event));
 		
-		culcmorebutton.setOnAction(event -> {
-			mandel.draw(1., 1.1);
-		});
-		culclessbutton.setOnAction(event -> {
-			mandel.draw(1., 1/1.1);
-		});
+		culcmorebutton.setOnAction(event -> mandel.draw(1., 1.1));
+		culclessbutton.setOnAction(event -> mandel.draw(1., 1/1.1));
 		
 		Thread.setDefaultUncaughtExceptionHandler((thread, throwable) -> {
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -580,6 +576,7 @@ public class MandelViewer extends Application{
 						public void run(){
 							int i, j;
 							double c, d;
+							gc.clearRect(0.0, 0.0, intwidth, intheight);
 							for (i = 0; i < intwidth; i += quality){
 								for (j = 0; j < intheight; j +=	quality){
 									c = (xmin+xmax)/2+(xmax-xmin)*(i-intwidth/2)/distance;
