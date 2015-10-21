@@ -12,6 +12,7 @@ import javafx.concurrent.WorkerStateEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Orientation;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.image.WritableImage;
 import javafx.scene.SnapshotParameters;
 import javafx.scene.control.MenuBar;
@@ -62,6 +63,7 @@ public class MandelViewer extends Application{
 	@Override
 	public void start(Stage stage){
 		stage.setTitle("MandelViewer");
+		stage.getIcons().add(new Image("icon.png"));
 		stage.setWidth(600);
 		stage.setHeight(600);
 		stage.setMinWidth(400);
@@ -71,7 +73,8 @@ public class MandelViewer extends Application{
 		
 		MenuBar menubar = new MenuBar();
 		menubar.setUseSystemMenuBar(true);
-		menubar.setPrefHeight(40);
+		menubar.setPrefHeight(onMac? 0: 25);
+		menubar.setPrefWidth(600);
 		AnchorPane.setLeftAnchor(menubar, 0.);
 		AnchorPane.setTopAnchor(menubar, 0.);
 		
@@ -236,7 +239,7 @@ public class MandelViewer extends Application{
 		statusbar.setPrefHeight(40);
 	    statusbar.setStyle("-fx-background-color: #E0E0E0;");
 		AnchorPane.setLeftAnchor(statusbar, 0.);
-		AnchorPane.setTopAnchor(statusbar, 560.);
+		AnchorPane.setTopAnchor(statusbar, 560-menubar.getPrefHeight());
 		info = new Label("");
 		progressbar = new ProgressBar();
 		progressbar.setVisible(false);
@@ -245,7 +248,7 @@ public class MandelViewer extends Application{
 		
 		AnchorPane board = new AnchorPane();
 		AnchorPane.setLeftAnchor(board, 0.);
-		AnchorPane.setTopAnchor(board, onMac? 0: menubar.getHeight());
+		AnchorPane.setTopAnchor(board, menubar.getPrefHeight());
 		
 		if(minimal){
 			mandel = new MandelSet(600, 600, -2.1, 0.5, -1.3, 1.3, 300);
@@ -285,20 +288,21 @@ public class MandelViewer extends Application{
 		
 		board.getChildren().addAll(mandel, zoomslider, labels, buttons);
 		
-		root.getChildren().addAll(menubar, board, statusbar);
+		root.getChildren().addAll(board, menubar, statusbar);
 		
 		stage.widthProperty().addListener((observableValue, oldSceneWidth, newSceneWidth) -> {
+			menubar.setPrefWidth(newSceneWidth.doubleValue());
 			statusbar.setPrefWidth(newSceneWidth.doubleValue());
-			mandel.gc.clearRect(0.0, 0.0, oldSceneWidth.doubleValue(), mandel.getHeight());
+			mandel.gc.clearRect(0.0, 0.0, mandel.getWidth(), mandel.getHeight());
 			mandel.setWidth((minimal? 1: 2)*newSceneWidth.doubleValue());
 			AnchorPane.setLeftAnchor(mandel, minimal? 0: -mandel.getWidth()/4);
 			mandel.draw();
 		});
 		stage.heightProperty().addListener((observableValue, oldSceneHeight, newSceneHeight) -> {
-			mandel.gc.clearRect(0.0, 0.0, mandel.getWidth(), oldSceneHeight.doubleValue());
+			mandel.gc.clearRect(0.0, 0.0, mandel.getWidth(), mandel.getHeight());
 			mandel.setHeight((minimal? 1: 2)*newSceneHeight.doubleValue());
-			AnchorPane.setTopAnchor(mandel, minimal? 0: -mandel.getHeight()/4);
-			AnchorPane.setTopAnchor(statusbar, newSceneHeight.doubleValue()-statusbar.getHeight());
+			AnchorPane.setTopAnchor(mandel, minimal? 0: -mandel.getHeight()/4+menubar.getPrefHeight());
+			AnchorPane.setTopAnchor(statusbar, newSceneHeight.doubleValue()-statusbar.getHeight()-menubar.getPrefHeight());
 			mandel.draw();
 		});
 		
