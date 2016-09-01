@@ -6,7 +6,7 @@ Mandel::Mandel(int width, int height, double xmin, double xmax, double ymin, dou
 	for(auto& row : map){
 		row = std::vector<double>(height);
 	}
-	setWeight(0.5);
+	setWeight(0.54);
 }
 
 const int Mandel::getWidth() noexcept{
@@ -123,11 +123,11 @@ void Mandel::setResolution(Resolution res) noexcept{
 			break;
 		case Resolution::MEDIUM:
 			this->res = 2;
-			setWeight(0.5);
+			setWeight(0.54);
 			break;
 		case Resolution::LOW:
 			this->res = 3;
-			setWeight(0.4);
+			setWeight(0.48);
 			break;
 		default:
 			break;

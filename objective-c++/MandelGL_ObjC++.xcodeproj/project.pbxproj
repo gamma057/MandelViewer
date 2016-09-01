@@ -1,0 +1,322 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A3502D851D75F29E00F4146E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A3502D841D75F29E00F4146E /* AppDelegate.m */; };
+		A3502D881D75F29E00F4146E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A3502D871D75F29E00F4146E /* main.m */; };
+		A3502D8B1D75F29E00F4146E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A3502D8A1D75F29E00F4146E /* ViewController.m */; };
+		A3502D8D1D75F29E00F4146E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3502D8C1D75F29E00F4146E /* Assets.xcassets */; };
+		A3502D901D75F29E00F4146E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3502D8E1D75F29E00F4146E /* Main.storyboard */; };
+		A3502D981D75F54400F4146E /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3502D971D75F54400F4146E /* OpenGL.framework */; };
+		A3502D9A1D75F55400F4146E /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3502D991D75F55400F4146E /* GLUT.framework */; };
+		A3502D9D1D75F6E600F4146E /* MandelGL.mm in Sources */ = {isa = PBXBuildFile; fileRef = A3502D9C1D75F6E600F4146E /* MandelGL.mm */; };
+		A3502DA01D76DFEB00F4146E /* Color.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A3502D9E1D76DFEB00F4146E /* Color.cpp */; };
+		A3502DA31D76E09500F4146E /* Mandel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A3502DA11D76E09500F4146E /* Mandel.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A3502D801D75F29E00F4146E /* MandelGL_ObjC++.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MandelGL_ObjC++.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3502D831D75F29E00F4146E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A3502D841D75F29E00F4146E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A3502D871D75F29E00F4146E /* main.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A3502D891D75F29E00F4146E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		A3502D8A1D75F29E00F4146E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A3502D8C1D75F29E00F4146E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A3502D8F1D75F29E00F4146E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A3502D911D75F29E00F4146E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A3502D971D75F54400F4146E /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		A3502D991D75F55400F4146E /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
+		A3502D9B1D75F6E600F4146E /* MandelGL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MandelGL.h; sourceTree = "<group>"; };
+		A3502D9C1D75F6E600F4146E /* MandelGL.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = MandelGL.mm; sourceTree = "<group>"; };
+		A3502D9E1D76DFEB00F4146E /* Color.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Color.cpp; sourceTree = "<group>"; };
+		A3502D9F1D76DFEB00F4146E /* Color.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Color.hpp; sourceTree = "<group>"; };
+		A3502DA11D76E09500F4146E /* Mandel.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; path = Mandel.cpp; sourceTree = "<group>"; };
+		A3502DA21D76E09500F4146E /* Mandel.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Mandel.hpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A3502D7D1D75F29E00F4146E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3502D9A1D75F55400F4146E /* GLUT.framework in Frameworks */,
+				A3502D981D75F54400F4146E /* OpenGL.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A3502D771D75F29D00F4146E = {
+			isa = PBXGroup;
+			children = (
+				A3502D991D75F55400F4146E /* GLUT.framework */,
+				A3502D971D75F54400F4146E /* OpenGL.framework */,
+				A3502D821D75F29E00F4146E /* MandelGL_ObjC++ */,
+				A3502D811D75F29E00F4146E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A3502D811D75F29E00F4146E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A3502D801D75F29E00F4146E /* MandelGL_ObjC++.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A3502D821D75F29E00F4146E /* MandelGL_ObjC++ */ = {
+			isa = PBXGroup;
+			children = (
+				A3502D831D75F29E00F4146E /* AppDelegate.h */,
+				A3502D841D75F29E00F4146E /* AppDelegate.m */,
+				A3502D891D75F29E00F4146E /* ViewController.h */,
+				A3502D8A1D75F29E00F4146E /* ViewController.m */,
+				A3502D8C1D75F29E00F4146E /* Assets.xcassets */,
+				A3502D8E1D75F29E00F4146E /* Main.storyboard */,
+				A3502D911D75F29E00F4146E /* Info.plist */,
+				A3502D861D75F29E00F4146E /* Supporting Files */,
+			);
+			path = "MandelGL_ObjC++";
+			sourceTree = "<group>";
+		};
+		A3502D861D75F29E00F4146E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A3502D871D75F29E00F4146E /* main.m */,
+				A3502D9B1D75F6E600F4146E /* MandelGL.h */,
+				A3502D9C1D75F6E600F4146E /* MandelGL.mm */,
+				A3502D9E1D76DFEB00F4146E /* Color.cpp */,
+				A3502D9F1D76DFEB00F4146E /* Color.hpp */,
+				A3502DA11D76E09500F4146E /* Mandel.cpp */,
+				A3502DA21D76E09500F4146E /* Mandel.hpp */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A3502D7F1D75F29E00F4146E /* MandelGL_ObjC++ */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A3502D941D75F29E00F4146E /* Build configuration list for PBXNativeTarget "MandelGL_ObjC++" */;
+			buildPhases = (
+				A3502D7C1D75F29E00F4146E /* Sources */,
+				A3502D7D1D75F29E00F4146E /* Frameworks */,
+				A3502D7E1D75F29E00F4146E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MandelGL_ObjC++";
+			productName = "MandelGL_ObjC++";
+			productReference = A3502D801D75F29E00F4146E /* MandelGL_ObjC++.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A3502D781D75F29E00F4146E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = psi;
+				TargetAttributes = {
+					A3502D7F1D75F29E00F4146E = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = A3502D7B1D75F29E00F4146E /* Build configuration list for PBXProject "MandelGL_ObjC++" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A3502D771D75F29D00F4146E;
+			productRefGroup = A3502D811D75F29E00F4146E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A3502D7F1D75F29E00F4146E /* MandelGL_ObjC++ */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A3502D7E1D75F29E00F4146E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3502D8D1D75F29E00F4146E /* Assets.xcassets in Resources */,
+				A3502D901D75F29E00F4146E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A3502D7C1D75F29E00F4146E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3502D8B1D75F29E00F4146E /* ViewController.m in Sources */,
+				A3502D9D1D75F6E600F4146E /* MandelGL.mm in Sources */,
+				A3502DA31D76E09500F4146E /* Mandel.cpp in Sources */,
+				A3502DA01D76DFEB00F4146E /* Color.cpp in Sources */,
+				A3502D881D75F29E00F4146E /* main.m in Sources */,
+				A3502D851D75F29E00F4146E /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A3502D8E1D75F29E00F4146E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A3502D8F1D75F29E00F4146E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A3502D921D75F29E00F4146E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		A3502D931D75F29E00F4146E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		A3502D951D75F29E00F4146E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "MandelGL_ObjC++/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "cat.MandelGL-ObjC--";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A3502D961D75F29E00F4146E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "MandelGL_ObjC++/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "cat.MandelGL-ObjC--";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A3502D7B1D75F29E00F4146E /* Build configuration list for PBXProject "MandelGL_ObjC++" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A3502D921D75F29E00F4146E /* Debug */,
+				A3502D931D75F29E00F4146E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A3502D941D75F29E00F4146E /* Build configuration list for PBXNativeTarget "MandelGL_ObjC++" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A3502D951D75F29E00F4146E /* Debug */,
+				A3502D961D75F29E00F4146E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A3502D781D75F29E00F4146E /* Project object */;
+}

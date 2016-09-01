@@ -15,7 +15,7 @@ constexpr double init_ymax = 1.3;
 constexpr uint init_nmax = 300;
 constexpr ColorType init_type = ColorType::SUNSET;
 
-Mandel mandel(init_width, init_height, init_xmin, init_xmax, init_ymin, init_xmax, init_nmax, init_type);
+Mandel mandel(init_width, init_height, init_xmin, init_xmax, init_ymin, init_ymax, init_nmax, init_type);
 double deltax, deltay;
 bool dragging;
 auto func = [](const double dx = 0.0, const double dy = 0.0, const double sc = 1.0, const double it = 1.0){mandel.calc(dx, -dy, sc, it);};
@@ -26,7 +26,7 @@ void display(){
 	glLoadIdentity();
 	glOrtho(-1.0, 1.0, -1.0, 1.0, -1.0, 1.0);
 	glViewport(0, 0, mandel.getWidth(), mandel.getHeight());
-	mandel.calc();
+	fut = std::async(std::launch::async, func);
 	mandel.draw();
 }
 
@@ -75,7 +75,7 @@ void mouseWheel(int wheel_number, int direction, int x, int y){
 void keyboard(unsigned char key, int x, int y){
 	switch(key){
 		case 'r':
-			mandel = Mandel(init_width, init_height, init_xmin, init_xmax, init_ymin, init_xmax, init_nmax, init_type);
+			mandel = Mandel(init_width, init_height, init_xmin, init_xmax, init_ymin, init_ymax, init_nmax, init_type);
 			glutReshapeWindow(init_width, init_height);
 			display();
 			break;

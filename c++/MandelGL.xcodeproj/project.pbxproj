@@ -30,7 +30,6 @@
 		A3DF5B331D70581B005C7270 /* MandelGL */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MandelGL; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3DF5B361D70581B005C7270 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		A3DF5B3D1D705877005C7270 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
-		A3DF5B3F1D70588D005C7270 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		A3DF5B411D705BD4005C7270 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		A3DF5B431D70A80C005C7270 /* Mandel.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Mandel.hpp; sourceTree = "<group>"; };
 		A3DF5B451D70B33E005C7270 /* Mandel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Mandel.cpp; sourceTree = "<group>"; };
@@ -55,7 +54,6 @@
 			isa = PBXGroup;
 			children = (
 				A3DF5B411D705BD4005C7270 /* OpenGL.framework */,
-				A3DF5B3F1D70588D005C7270 /* GLKit.framework */,
 				A3DF5B3D1D705877005C7270 /* GLUT.framework */,
 				A3DF5B351D70581B005C7270 /* MandelGL */,
 				A3DF5B341D70581B005C7270 /* Products */,
@@ -263,6 +261,7 @@
 				A3DF5B3C1D70581B005C7270 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

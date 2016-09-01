@@ -5,7 +5,6 @@
 #include <cmath>
 #include <vector>
 #include "Color.hpp"
-#include "Vector23.hpp"
 
 enum class Resolution{
 	HIGH,
