@@ -9,6 +9,6 @@
 
 -(NSTimer*)createTimer;
 -(void)idle;
--(void)translate:(double)x y:(double) y;
+-(void)translateX:(double)x y:(double) y;
 
 @end

@@ -95,16 +95,16 @@ auto fut = std::async(std::launch::deferred, calc);
 	}
 	switch(key){
 		case 124: //right
-			[self translate:40.0 y:0.0];
+			[self translateX:40.0 y:0.0];
 			return;
 		case 123: //left
-			[self translate:-40.0 y:0.0];
+			[self translateX:-40.0 y:0.0];
 			return;
 		case 126: //up
-			[self translate:0.0 y:40.0];
+			[self translateX:0.0 y:40.0];
 			return;
 		case 125: //down
-			[self translate:0.0 y:-40.0];
+			[self translateX:0.0 y:-40.0];
 			return;
 		case 41:  //'+'
 			if(flags & NSShiftKeyMask){
@@ -185,7 +185,7 @@ auto fut = std::async(std::launch::deferred, calc);
 	timer = [self createTimer];
 }
 
--(void)translate:(double) x y:(double) y{
+-(void)translateX:(double) x y:(double) y{
 	deltax += x;
 	deltay += y;
 	const double dx = -2.0*x/mandel.getWidth();
