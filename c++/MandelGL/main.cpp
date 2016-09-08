@@ -6,16 +6,7 @@
 
 using namespace std::chrono_literals;
 
-constexpr int init_width = 600;
-constexpr int init_height = 600;
-constexpr double init_xmin = -2.1;
-constexpr double init_xmax = 0.5;
-constexpr double init_ymin = -1.3;
-constexpr double init_ymax = 1.3;
-constexpr uint init_nmax = 300;
-constexpr ColorType init_type = ColorType::SUNSET;
-
-Mandel mandel(init_width, init_height, init_xmin, init_xmax, init_ymin, init_ymax, init_nmax, init_type);
+Mandel mandel;
 double deltax, deltay;
 bool dragging;
 auto func = [](const double dx = 0.0, const double dy = 0.0, const double sc = 1.0, const double it = 1.0){mandel.calc(dx, -dy, sc, it);};
@@ -75,7 +66,7 @@ void mouseWheel(int wheel_number, int direction, int x, int y){
 void keyboard(unsigned char key, int x, int y){
 	switch(key){
 		case 'r':
-			mandel = Mandel(init_width, init_height, init_xmin, init_xmax, init_ymin, init_ymax, init_nmax, init_type);
+			mandel = Mandel();
 			glutReshapeWindow(init_width, init_height);
 			display();
 			break;
@@ -121,7 +112,7 @@ void keyboard(unsigned char key, int x, int y){
 			fut = std::async(std::launch::async, func);
 			break;
 		case 'b':
-			mandel.setBroad(!mandel.isBroad());
+			mandel.changeBroad();
 			if(mandel.isBroad()){
 				fut = std::async(std::launch::async, func, 0.0, 0.0, 2.0);
 			}else{

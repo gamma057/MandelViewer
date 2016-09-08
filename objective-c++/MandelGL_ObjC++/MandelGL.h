@@ -10,5 +10,6 @@
 -(NSTimer*)createTimer;
 -(void)idle;
 -(void)translateX:(double)x y:(double) y;
+-(void)savePicture;
 
 @end

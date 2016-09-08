@@ -1,4 +1,5 @@
 #import <GLUT/GLUT.h>
+#import <opencv/cv.hpp>
 #import "MandelGL.h"
 #include <thread>
 #include <future>
@@ -96,16 +97,16 @@ auto fut = std::async(std::launch::deferred, calc);
 	switch(key){
 		case 124: //right
 			[self translateX:40.0 y:0.0];
-			return;
+			break;
 		case 123: //left
 			[self translateX:-40.0 y:0.0];
-			return;
+			break;
 		case 126: //up
 			[self translateX:0.0 y:40.0];
-			return;
+			break;
 		case 125: //down
 			[self translateX:0.0 y:-40.0];
-			return;
+			break;
 		case 41:  //'+'
 			if(flags & NSShiftKeyMask){
 				fut = std::async(std::launch::async, calc, 0.0, 0.0, 1.0, 1.1);
@@ -147,12 +148,15 @@ auto fut = std::async(std::launch::deferred, calc);
 			fut = std::async(std::launch::async, calc);
 			break;
 		case 11:  //'b'
-			mandel.setBroad(!mandel.isBroad());
+			mandel.changeBroad();
 			if(mandel.isBroad()){
 				fut = std::async(std::launch::async, calc, 0.0, 0.0, 2.0);
 			}else{
 				fut = std::async(std::launch::async, calc, 0.0, 0.0, 0.5);
 			}
+			break;
+		case 1:   //'s'
+			[self savePicture];
 			break;
 		case 15:  //'r'
 			mandel = Mandel();
@@ -166,6 +170,10 @@ auto fut = std::async(std::launch::deferred, calc);
 
 -(BOOL)acceptsFirstResponder{
 	return YES;
+}
+
+-(void)prepareOpenGL{
+	glClearColor(1.0, 1.0, 1.0, 0.0);
 }
 
 -(NSTimer*)createTimer{
@@ -195,8 +203,21 @@ auto fut = std::async(std::launch::deferred, calc);
 	fut = std::async(std::launch::async, calc, x, y);
 }
 
--(void)prepareOpenGL{
-	glClearColor(1.0, 1.0, 1.0, 0.0);
+-(void)savePicture{
+	NSSavePanel* panel = [NSSavePanel savePanel];
+	[panel setNameFieldStringValue:@"image.png"];
+	[panel setDirectoryURL:[NSURL URLWithString:@"~/Documents"]];
+	if([panel runModal] != NSFileHandlingPanelOKButton) return;
+	glReadBuffer(GL_FRONT);
+	const int width = mandel.getWidth();
+	const int height = mandel.getHeight();
+	uchar* pixs = new uchar[4*width*height];
+	glReadPixels(0, 0, width, height, GL_BGRA, GL_UNSIGNED_BYTE, pixs);
+	cv::Mat img(height, width, CV_8UC4, pixs);
+	cv::flip(img, img, 0);
+	cv::imwrite([[[panel URL] path] UTF8String], img);
+	img.release();
+	delete[] pixs;
 }
 
 @end

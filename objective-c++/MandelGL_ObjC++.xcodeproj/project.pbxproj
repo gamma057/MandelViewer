@@ -17,6 +17,8 @@
 		A3502D9D1D75F6E600F4146E /* MandelGL.mm in Sources */ = {isa = PBXBuildFile; fileRef = A3502D9C1D75F6E600F4146E /* MandelGL.mm */; };
 		A3502DA01D76DFEB00F4146E /* Color.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A3502D9E1D76DFEB00F4146E /* Color.cpp */; };
 		A3502DA31D76E09500F4146E /* Mandel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A3502DA11D76E09500F4146E /* Mandel.cpp */; };
+		A38AB5A21D81C290008F6C7D /* libopencv_core.3.1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A38AB5A01D81C290008F6C7D /* libopencv_core.3.1.0.dylib */; };
+		A38AB5A31D81C290008F6C7D /* libopencv_imgcodecs.3.1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A38AB5A11D81C290008F6C7D /* libopencv_imgcodecs.3.1.0.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		A3502D9F1D76DFEB00F4146E /* Color.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Color.hpp; sourceTree = "<group>"; };
 		A3502DA11D76E09500F4146E /* Mandel.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; path = Mandel.cpp; sourceTree = "<group>"; };
 		A3502DA21D76E09500F4146E /* Mandel.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Mandel.hpp; sourceTree = "<group>"; };
+		A38AB5A01D81C290008F6C7D /* libopencv_core.3.1.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_core.3.1.0.dylib; path = ../../../../../../opt/local/lib/libopencv_core.3.1.0.dylib; sourceTree = "<group>"; };
+		A38AB5A11D81C290008F6C7D /* libopencv_imgcodecs.3.1.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_imgcodecs.3.1.0.dylib; path = ../../../../../../opt/local/lib/libopencv_imgcodecs.3.1.0.dylib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +48,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A38AB5A21D81C290008F6C7D /* libopencv_core.3.1.0.dylib in Frameworks */,
+				A38AB5A31D81C290008F6C7D /* libopencv_imgcodecs.3.1.0.dylib in Frameworks */,
 				A3502D9A1D75F55400F4146E /* GLUT.framework in Frameworks */,
 				A3502D981D75F54400F4146E /* OpenGL.framework in Frameworks */,
 			);
@@ -55,6 +61,8 @@
 		A3502D771D75F29D00F4146E = {
 			isa = PBXGroup;
 			children = (
+				A38AB5A01D81C290008F6C7D /* libopencv_core.3.1.0.dylib */,
+				A38AB5A11D81C290008F6C7D /* libopencv_imgcodecs.3.1.0.dylib */,
 				A3502D991D75F55400F4146E /* GLUT.framework */,
 				A3502D971D75F54400F4146E /* OpenGL.framework */,
 				A3502D821D75F29E00F4146E /* MandelGL_ObjC++ */,
@@ -195,6 +203,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -228,6 +237,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /opt/local/include;
+				LIBRARY_SEARCH_PATHS = /opt/local/lib;
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -239,6 +250,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -266,6 +278,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /opt/local/include;
+				LIBRARY_SEARCH_PATHS = /opt/local/lib;
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
@@ -279,6 +293,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "MandelGL_ObjC++/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/local/lib,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "cat.MandelGL-ObjC--";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -291,6 +309,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "MandelGL_ObjC++/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/local/lib,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "cat.MandelGL-ObjC--";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -315,6 +337,7 @@
 				A3502D961D75F29E00F4146E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,2 +1,2 @@
 dependencies: \
-  /Users/tomokazu/Documents/Programs/MandelGL_ObjC++/MandelGL_ObjC++/main.m
+  /Users/tomokazu/Documents/Programs/MandelViewer/objective-c++/MandelGL_ObjC++/main.m

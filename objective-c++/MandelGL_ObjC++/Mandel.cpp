@@ -3,12 +3,12 @@
 
 Mandel::Mandel(): Mandel(init_width, init_height, init_xmin, init_xmax, init_ymin, init_ymax, init_nmax, init_type){}
 
-Mandel::Mandel(int width, int height, double xmin, double xmax, double ymin, double ymax, uint nmax, ColorType type): width(width), height(height), xmin(xmin), xmax(xmax), ymin(ymin), ymax(ymax), nmax(nmax), res(2), broad(false), type(type), list(1){
+Mandel::Mandel(int width, int height, double xmin, double xmax, double ymin, double ymax, uint nmax, ColorType type): width(width), height(height), xmin(xmin), xmax(xmax), ymin(ymin), ymax(ymax), nmax(nmax), res(init_res), broad(false), type(type), list(1){
 	map = std::vector<std::vector<double>>(width);
-	for(auto& row : map){
-		row = std::vector<double>(height);
+	for(auto& column : map){
+		column = std::vector<double>(height);
 	}
-	setWeight(0.54);
+	setWeight(init_sigma[1]);
 }
 
 const int Mandel::getWidth() noexcept{
@@ -25,8 +25,8 @@ void Mandel::resize(int width, int height){
 	this->width = width;
 	this->height = height;
 	map.resize(width);
-	for(auto& row : map){
-		row.resize(height);
+	for(auto& column : map){
+		column.resize(height);
 	}
 }
 
@@ -105,15 +105,12 @@ Color Mandel::blur(const int i, const int j) noexcept{
 	}
 }
 
-void Mandel::setBroad(const bool broad) noexcept{
-	if(this->broad == broad) return;
-	this->broad = broad;
-	const int owidth = width;
-	const int oheight = height;
+void Mandel::changeBroad() noexcept{
+	broad = !broad;
 	if(broad){
-		resize(2.0*owidth, 2.0*oheight);
+		resize(2.0*width, 2.0*height);
 	}else{
-		resize(0.5*owidth, 0.5*oheight);
+		resize(0.5*width, 0.5*height);
 	}
 }
 
@@ -121,15 +118,15 @@ void Mandel::setResolution(Resolution res) noexcept{
 	switch(res){
 		case Resolution::HIGH:
 			this->res = 1;
-			setWeight(1.0);
+			setWeight(init_sigma[0]);
 			break;
 		case Resolution::MEDIUM:
 			this->res = 2;
-			setWeight(0.54);
+			setWeight(init_sigma[1]);
 			break;
 		case Resolution::LOW:
 			this->res = 3;
-			setWeight(0.48);
+			setWeight(init_sigma[2]);
 			break;
 		default:
 			break;

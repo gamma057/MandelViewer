@@ -11,6 +11,8 @@ constexpr double init_xmax = 0.5;
 constexpr double init_ymin = -1.3;
 constexpr double init_ymax = 1.3;
 constexpr uint init_nmax = 300;
+constexpr int init_res = 2;
+constexpr double init_sigma[] = {1.0, 0.54, 0.48};
 constexpr ColorType init_type = ColorType::SUNSET;
 
 enum class Resolution{
@@ -44,7 +46,7 @@ public:
 	void draw() noexcept;
 	void redraw() noexcept;
 	Color blur(const int i, const int j) noexcept;
-	void setBroad(const bool broad) noexcept;
+	void changeBroad() noexcept;
 	void setResolution(Resolution res) noexcept;
 	void setWeight(const double sigma) noexcept;
 	const double mandel(const double c, const double d) noexcept;
